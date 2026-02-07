@@ -1,0 +1,47 @@
+class LibraryItem {
+    String title;
+    int daysLate;
+    void show() {
+        System.out.println("Title: " + title);
+        System.out.println("Days Late: " + daysLate);
+    }
+}
+class Book extends LibraryItem {
+    void lateFee() {
+        System.out.println("Late Fee: " + (daysLate * 2));
+        System.out.println();
+    }
+}
+class Magazine extends LibraryItem {
+    void lateFee() {
+        System.out.println("Late Fee: " + (daysLate * 3));
+        System.out.println();
+    }
+}
+class DVD extends LibraryItem {
+    void lateFee() {
+        System.out.println("Late Fee: " + (daysLate * 5));
+        
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Book b = new Book();
+        b.title = "Java Programming";
+        b.daysLate = 4;
+        b.show();
+        b.lateFee();
+
+        Magazine m = new Magazine();
+        m.title = "Tech Monthly";
+        m.daysLate = 3;
+        m.show();
+        m.lateFee();
+
+        DVD d = new DVD();
+        d.title = "Cyber Security Basics";
+        d.daysLate = 2;
+        d.show();
+        d.lateFee();
+    }
+}
